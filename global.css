@@ -1,21 +1,40 @@
 /* This css file will apply to all selectors that will apply to the whole website,
    such as fonts, font size, and navigation bar */
-.clear { clear:both; height:1px; line-height:1px; }
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.clear {
+  clear: both;
+  height: 1px;
+  line-height: 1px;
+}
 
 /* fonts */
-h1, h2, header td.TITLE, .menu { font-family:'Raleway',sans-serif; }
-h3, h4, #footer, input { font-family:'Roboto',sans-serif; }
-p { font-family:'Roboto',sans-serif; }
-th, td { font-family:'Roboto',sans-serif; }
+h1,h2, header td.TITLE,
+.menu {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+}
+
+h3,h4,#footer,input {
+  font-family: 'Roboto', sans-serif;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+th,td {
+  font-family: 'Roboto', sans-serif;
+}
 
 /* Navbar */
 #navbar {
-    height: 100px;
-    background-color: #000066;
-    overflow: hidden;
-    margin: 0px;
+  height: 100px;
+  background-color: #000066;
+  overflow: hidden;
+  margin: 0px;
 }
 
 #navbar img {
-    height: 70px;
+  height: 70px;
 }
