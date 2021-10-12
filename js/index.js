@@ -1,7 +1,7 @@
 var chart = JSC.chart('chartDiv', {
   debug: true,
 	annotations: [{
-		label_text: "Source: Health.gov.au - Resources - 2014 September 2021",
+		label_text: "Source: Health.gov.au - Resources - As of 14 September 2021",
 		position: 'bottom left'
 	}],
   defaultSeries_type: 'column',
