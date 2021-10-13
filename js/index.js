@@ -32,6 +32,8 @@ var chart = JSC.chart('chartDiv', {
   ]
 });
 
+
+
 JSC.fetch("vaccination.csv")
   .then(response => response.text())
   .then(text => {
@@ -40,6 +42,17 @@ JSC.fetch("vaccination.csv")
 
 function renderChart(series){
 	JSC.Chart('chartDiv2', {
+		title_label_text: 'Life Expectancy in the United States',
+		annotations: [{
+			label_text: 'Source: National Center for Health Statistics',
+			position: 'bottom left'
+		}],
+		series: series
+	});
+}
+
+function renderChart(series){
+	JSC.Chart('chartDiv', {
 		title_label_text: 'Life Expectancy in the United States',
 		annotations: [{
 			label_text: 'Source: National Center for Health Statistics',
