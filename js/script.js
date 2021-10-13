@@ -41,7 +41,7 @@ JSC.fetch("vaccination.csv")
   });
 
 function renderChart(series){
-	JSC.Chart('chartDiv2', {
+	JSC.Chart('chartDiv', {
 		title_label_text: 'Life Expectancy in the United States',
 		annotations: [{
 			label_text: 'Source: National Center for Health Statistics',
@@ -49,6 +49,93 @@ function renderChart(series){
 		}],
 		series: series
 	});
+}
+
+// JS
+var chart;
+var data = [
+  {
+    country: 'VIC',
+    percent: 74.21,
+    population: 19627
+  },
+  {
+    country: 'NSW',
+    percent: 23.8,
+    population: 6308
+  },
+  {
+    country: 'ACT',
+    percent: 1.7,
+    population: 450
+  },
+  {
+    country: 'NT',
+    percent: 0.03,
+    population: 8
+  },
+  {
+    country: 'QLD',
+    percent: 0.1,
+    population: 34
+  },
+  {
+    country: 'SA',
+    percent: 0.02,
+    population: 7
+  },
+  {
+    country: 'TAS',
+    percent: 0.003,
+    population: 1
+  },
+  {
+    country: 'WA',
+    percent: 0.04,
+    population: 13
+  }
+];
+
+chart = renderChart(makeSeries(data));
+
+function renderChart(series) {
+  return JSC.chart('chartDiv2', {
+    title_label_text:
+      'Source: Health.gov.au - Resources - Updated 9pm October 13th 2021',
+    debug: true,
+    type: 'column solid',
+    legend_visible: false,
+    palette: ['#66ff99'],
+    defaultPoint: {
+      tooltip:
+        '<b>%xValue</b> <br>Active Cases: <b>%yValue</b><br><b>%complete',
+      complete: {
+        fill: 'rgba(255,255,255,.3)',
+        hatch_style: 'none'
+      },
+      label: {
+        text: '%complete',
+        align: 'center',
+        verticalAlign: 'bottom',
+        autoHide: false,
+        style_fontSize: '15px'
+      }
+    },
+    series: series
+  });
+}
+function makeSeries(data) {
+  return JSC.nest()
+    .key('country')
+    .pointRollup(function(key, val) {
+      var values = val[0];
+      return {
+        x: key,
+        y: values.population,
+        complete: values.percent / 100
+      };
+    })
+    .series(data);
 }
 
 function myFunction() {
