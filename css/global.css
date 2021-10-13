@@ -17,7 +17,6 @@ html {
   height: 100%;
 }
 
-
 .container {
   margin: 15px 25px auto;
   font-family: 'Open Sans', sans-serif;
@@ -26,6 +25,7 @@ html {
 	width: 80%;
 	margin: 0 auto;
   font-weight: bold;
+  text-decoration: none;
 }
 
 header {
@@ -44,6 +44,7 @@ header::after {
   font-size: 25px;
   color: #333333;
   margin-right: 100;
+  text-decoration: none!important;
 }
 
 nav {
