@@ -50,50 +50,16 @@ function renderChart(series){
 		series: series
 	});
 }
-
-// JS
 var chart;
 var data = [
-  {
-    country: 'VIC',
-    percent: 74.21,
-    population: 19627
-  },
-  {
-    country: 'NSW',
-    percent: 23.8,
-    population: 6308
-  },
-  {
-    country: 'ACT',
-    percent: 1.7,
-    population: 450
-  },
-  {
-    country: 'NT',
-    percent: 0.03,
-    population: 8
-  },
-  {
-    country: 'QLD',
-    percent: 0.1,
-    population: 34
-  },
-  {
-    country: 'SA',
-    percent: 0.02,
-    population: 7
-  },
-  {
-    country: 'TAS',
-    percent: 0.003,
-    population: 1
-  },
-  {
-    country: 'WA',
-    percent: 0.04,
-    population: 13
-  }
+  {    country: 'VIC', percent: 74.21, population: 19627  },
+  {    country: 'NSW',    percent: 23.8,    population: 6308  },
+  {    country: 'ACT',    percent: 1.7,    population: 450  },
+  {    country: 'NT',    percent: 0.03,    population: 8  },
+  {    country: 'QLD',    percent: 0.1,    population: 34  },
+  {    country: 'SA',    percent: 0.02,    population: 7  },
+  {   country: 'TAS',    percent: 0.003,    population: 1  },
+  {    country: 'WA',    percent: 0.04,    population: 13  }
 ];
 
 chart = renderChart(makeSeries(data));
